@@ -1,0 +1,10 @@
+{
+  "name": "github-daily-automation",
+  "version": "1.0.0",
+  "description": "Automated daily repository activity tracker using GitHub Actions",
+  "main": "scripts/updateActivity.js",
+  "scripts": {
+    "update": "node scripts/updateActivity.js"
+  },
+  "license": "MIT"
+}

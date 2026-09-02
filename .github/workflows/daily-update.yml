@@ -5,7 +5,7 @@ on:
     # Runs 10 times every day (UTC)
     - cron: "0 0,2,4,7,9,12,14,16,19 * * *"
 
-  # Allows you to run the workflow manually
+  # Allows manual testing
   workflow_dispatch:
 
 permissions:
@@ -17,15 +17,16 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: true
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
+          package-manager-cache: false
 
       - name: Run activity update
         run: node scripts/updateActivity.js
